@@ -58,7 +58,7 @@ with open("faiss_store_openai.pkl", 'rb') as f:
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.llms import OpenAI
 
-llm = OpenAI(temperature=0, model_name="text-davinci-003")
+llm = OpenAI(temperature=0.7, model_name="gpt-3.5-turbo")
 chain = RetrievalQAWithSourcesChain.from_llm(llm=llm, retriever=vectorStore.as_retriever())
 
 # Test the chain
