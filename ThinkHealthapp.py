@@ -66,7 +66,7 @@ def main():
 
     if user_question:
         vector_store = load_vector_store()
-        llm = OpenAI(temperature=0, model_name="text-davinci-003")
+        llm = OpenAI(temperature=0.7, model_name="gpt-3.5-turbo")
         chain = RetrievalQAWithSourcesChain.from_llm(llm=llm, retriever=vector_store.as_retriever())
 
         model_response = chain({"question": user_question})['answer']
